@@ -17,3 +17,7 @@ This repo is created for learning new word daily.
 ## APIs
 - [random](https://rapidapi.com/sheharyar566/api/random-words5/?utm_source=ANIA-KUBOW&utm_medium=DevRel&utm_campaign=DevRel)
 - [dictionary](https://rapidapi.com/twinword/api/word-dictionary/?utm_source=ANIA-KUBOW&utm_medium=DevRel&utm_campaign=DevRel)
+
+
+## Designs
+- [figma](https://www.figma.com/file/YBoInrxjSSOOhEn4FgmWL3/todo-app?node-id=0%3A1)
