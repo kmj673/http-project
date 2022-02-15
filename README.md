@@ -14,6 +14,12 @@ This repo is created for learning new word daily.
 - filtered word I had like a-z or other way.
 - click the word, i want the definition of the word. 
 
+## User journey
+- click the generate button
+- get random 5 letter word
+- user can see it is added on the list
+- user can hover/click the word to see the definition. 
+
 ## APIs
 - [random](https://rapidapi.com/sheharyar566/api/random-words5/?utm_source=ANIA-KUBOW&utm_medium=DevRel&utm_campaign=DevRel)
 - [dictionary](https://rapidapi.com/twinword/api/word-dictionary/?utm_source=ANIA-KUBOW&utm_medium=DevRel&utm_campaign=DevRel)
