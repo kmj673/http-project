@@ -28,7 +28,7 @@ const setGlobalData = async () => {
   data = finalResult;
   wordOfTheDay = data[0];
   wordDom.innerText = `"${wordOfTheDay}"`;
-  return data;
+  return wordOfTheDay;
 };
 
 // setGlobalData()
@@ -41,7 +41,7 @@ const setGlobalData = async () => {
 // let searchWord = searchForm.querySelector("input");
 // let searchButton = searchForm.querySelector("button");
 
-function search(e, searchWord) {
+function getDefinition(e, searchWord) {
   e.preventDefault();
   fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${searchWord}`)
     .then((response) => {
@@ -67,15 +67,10 @@ function search(e, searchWord) {
 // searchForm.addEventListener("submit", search);
 
 generateBtn.addEventListener("click", (event) => {
-  let array10Words = setGlobalData();
-  array10Words
-    .then((response) => {
-      let todayWord = response[0];
-      return todayWord;
-    })
-    .then((response) => {
-      search(event, response);
-    });
+  let todayWord = setGlobalData();
+  todayWord.then((word) => {
+    getDefinition(event, word);
+  });
 });
 
 /*^^^^^^^^^^^^^^^^ end ^^^^^^^^^^^^^^^^^^^ random word and get definitions */
