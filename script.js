@@ -19,6 +19,8 @@ let wordOfTheDay;
 //   return finalResult;
 // };
 
+let myWords = [];
+
 const generateBtn = document.querySelector("button");
 const wordDom = document.querySelector("span");
 
@@ -27,9 +29,12 @@ const setGlobalData = async () => {
   const finalResult = await fetchResult.json();
   data = finalResult;
   wordOfTheDay = data[0];
+  myWords = [...myWords, wordOfTheDay]; // add the words to an array
+  updateLocalStorageForMyWords();
   wordDom.innerText = `"${wordOfTheDay}"`;
-
-  return data;
+  console.log(myWords);
+  renderMyWords(myWords);
+  return wordOfTheDay;
 };
 
 // setGlobalData()
@@ -42,7 +47,7 @@ const setGlobalData = async () => {
 // let searchWord = searchForm.querySelector("input");
 // let searchButton = searchForm.querySelector("button");
 
-function search(e, searchWord) {
+function getDefinition(e, searchWord) {
   e.preventDefault();
   fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${searchWord}`)
     .then((response) => {
@@ -57,8 +62,8 @@ function search(e, searchWord) {
         for (let def of defs.definitions) {
           console.log(def);
 
-          meaningDom.innerText = `def: "${def.definition}"
-          example: "${def.example}"
+          meaningDom.innerText = `Definition: "${def.definition}"
+          Example: "${def.example}"
           `;
         }
       }
@@ -72,17 +77,41 @@ function search(e, searchWord) {
 // searchForm.addEventListener("submit", search);
 
 generateBtn.addEventListener("click", (event) => {
-  let array10Words = setGlobalData();
-  array10Words
-    .then((response) => {
-      let todayWord = response[0];
-      return todayWord;
-    })
-    .then((response) => {
-      search(event, response);
-    });
+  let todayWord = setGlobalData();
+  todayWord.then((word) => {
+    getDefinition(event, word);
+  });
 });
 
 /*^^^^^^^^^^^^^^^^ end ^^^^^^^^^^^^^^^^^^^ random word and get definitions */
 
 const meaningDom = document.querySelector("section");
+const myWordsDom = document.querySelector(".my-words");
+
+function renderMyWords(array) {
+  myWordsDom.innerHTML = "";
+  array.forEach((element) => {
+    let div = document.createElement("div");
+    div.classList.add("list-of-my-words");
+    div.textContent = element;
+    myWordsDom.appendChild(div);
+  });
+}
+
+myWordsDom.addEventListener("click", (e) => {
+  let targetedWord = e.target.innerText;
+
+  getDefinition(e, targetedWord);
+  wordDom.innerText = `"${targetedWord}"`;
+});
+
+//localStorage
+
+function updateLocalStorageForMyWords() {
+  localStorage.setItem("myWords", JSON.stringify(myWords));
+}
+
+if (localStorage.getItem("myWords")) {
+  myWords = JSON.parse(localStorage.getItem("myWords"));
+  renderMyWords(myWords);
+}
