@@ -19,6 +19,8 @@ let wordOfTheDay;
 //   return finalResult;
 // };
 
+let myWords = [];
+
 const generateBtn = document.querySelector("button");
 const wordDom = document.querySelector("span");
 
@@ -27,7 +29,11 @@ const setGlobalData = async () => {
   const finalResult = await fetchResult.json();
   data = finalResult;
   wordOfTheDay = data[0];
+  myWords = [...myWords, wordOfTheDay]; // add the words to an array
+  updateLocalStorageForMyWords();
   wordDom.innerText = `"${wordOfTheDay}"`;
+  console.log(myWords);
+  renderMyWords(myWords);
   return wordOfTheDay;
 };
 
@@ -55,6 +61,10 @@ function getDefinition(e, searchWord) {
         console.log(defs.partOfSpeech);
         for (let def of defs.definitions) {
           console.log(def);
+
+          meaningDom.innerText = `Definition: "${def.definition}"
+          Example: "${def.example}"
+          `;
         }
       }
       console.log(`--------------------------------------`);
@@ -74,3 +84,34 @@ generateBtn.addEventListener("click", (event) => {
 });
 
 /*^^^^^^^^^^^^^^^^ end ^^^^^^^^^^^^^^^^^^^ random word and get definitions */
+
+const meaningDom = document.querySelector("section");
+const myWordsDom = document.querySelector(".my-words");
+
+function renderMyWords(array) {
+  myWordsDom.innerHTML = "";
+  array.forEach((element) => {
+    let div = document.createElement("div");
+    div.classList.add("list-of-my-words");
+    div.textContent = element;
+    myWordsDom.appendChild(div);
+  });
+}
+
+myWordsDom.addEventListener("click", (e) => {
+  let targetedWord = e.target.innerText;
+
+  getDefinition(e, targetedWord);
+  wordDom.innerText = `"${targetedWord}"`;
+});
+
+//localStorage
+
+function updateLocalStorageForMyWords() {
+  localStorage.setItem("myWords", JSON.stringify(myWords));
+}
+
+if (localStorage.getItem("myWords")) {
+  myWords = JSON.parse(localStorage.getItem("myWords"));
+  renderMyWords(myWords);
+}
