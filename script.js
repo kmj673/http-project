@@ -28,6 +28,7 @@ const setGlobalData = async () => {
   data = finalResult;
   wordOfTheDay = data[0];
   wordDom.innerText = `"${wordOfTheDay}"`;
+
   return data;
 };
 
@@ -55,6 +56,10 @@ function search(e, searchWord) {
         console.log(defs.partOfSpeech);
         for (let def of defs.definitions) {
           console.log(def);
+
+          meaningDom.innerText = `def: "${def.definition}"
+          example: "${def.example}"
+          `;
         }
       }
       console.log(`--------------------------------------`);
@@ -79,3 +84,5 @@ generateBtn.addEventListener("click", (event) => {
 });
 
 /*^^^^^^^^^^^^^^^^ end ^^^^^^^^^^^^^^^^^^^ random word and get definitions */
+
+const meaningDom = document.querySelector("section");
