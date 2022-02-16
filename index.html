@@ -4,26 +4,33 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project Name</title>
+    <title>5 letter words</title>
 
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <section class="top-section">
+    <header></header>
+    <main class="width-lg">
       <h1>Wordle Words</h1>
-      <div class="">word: <span class="word-display"></span></div>
-      <div class="meaning"></div>
-      <button>Generate NEW Word</button>
-    </section>
-
-    <section class="">
-      <h2>Word History</h2>
-      <p>click on a word to get defination</p>
-      <input id="checkbox" type="checkbox" />
-      <label class="az" for="checkbox"> A-Z </label>
-      <div class="my-words"></div>
-    </section>
-
+      <section class="top-section">
+        <div class="">word: <span class="word-display"></span></div>
+        <button>Generate NEW Word</button>
+      </section>
+      <section class="meaning"></section>
+      <section class="word-list">
+        <h2>Word History</h2>
+        <p>click on a word to get defination</p>
+        <input id="checkbox" type="checkbox" />
+        <label class="az" for="checkbox"> A-Z </label>
+        <div class="my-words"></div>
+      </section>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>

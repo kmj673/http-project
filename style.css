@@ -1,35 +1,93 @@
-h1 {
-  background-color: black;
-  color: #fff8e7;
+.width-lg {
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 body {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
   display: grid;
   place-items: center;
-  height: 50vh;
+  /* height: 50vh; */
   background: #222;
   color: white;
   font-size: 2rem;
+  font-family: Josefin Sans;
 }
-
-span {
-  background: lightyellow;
-  /* font-size: 2rem;
+header {
+  position: absolute;
+  width: 100%;
+  height: 15rem;
+  left: 0px;
+  top: 0px;
+  background-image: linear-gradient(135deg, #3710bd, #a42395);
+  z-index: -10;
+}
+main {
+  display: flex;
+  flex-flow: column wrap;
+  margin-top: 1rem;
+  width: 35rem;
+}
+h1 {
+  font-family: Josefin Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 2rem;
+  color: #ffffff;
+}
+/* -------------------------------top section */
+.top-section {
+  background-color: #25273d;
+  height: 3rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-section > div {
+  font-family: Josefin Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.5rem;
+  color: #c8cbe7;
+  margin-left: 1rem;
+}
+.top-section > div > span {
+  /* background: lightyellow;
+  font-size: 2rem;
   padding: 0.5rem 1rem;
   margin: 5px; */
-  color: black;
+  color: #c8cbe7;
   border-radius: 1rem;
 }
-
-button {
+.top-section > button {
+  font-size: 0.5rem;
+  font-weight: 600;
   border: none;
-  border-radius: 1rem;
-  /* padding: 2rem 3.5rem;
-  font-size: 2rem; */
-  background: lightgreen;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.5rem;
+  background: #c4c4c4;
   cursor: pointer;
+  margin-right: 1rem;
 }
-
+/* ------------------------------------meaning section */
+.meaning {
+  display: flex;
+  align-items: center;
+  padding: 2rem 1rem;
+  background-color: #c4c4c4;
+  height: 5rem;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+/* ------------------------------- word list section */
+.word-list {
+  margin-top: 1rem;
+  background-color: #25273d;
+}
 .list-of-my-words {
   cursor: pointer;
 }
@@ -47,8 +105,4 @@ button {
 
 #checkbox:checked ~ .az {
   color: lawngreen;
-}
-
-.meaning {
-  font-size: 1.5rem;
 }
