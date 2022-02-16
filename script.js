@@ -32,7 +32,6 @@ const setGlobalData = async () => {
   myWords = [...myWords, wordOfTheDay]; // add the words to an array
   updateLocalStorageForMyWords();
   wordDom.innerText = `"${wordOfTheDay}"`;
-  console.log(myWords);
   renderMyWords(myWords);
   return wordOfTheDay;
 };
