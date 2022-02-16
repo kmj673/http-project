@@ -1,4 +1,4 @@
-/*------start------------ generate random word -------------------- */
+/*------------------------------------ generate random word */
 const link =
   "https://random-words5.p.rapidapi.com/getMultipleRandom?count=10&wordLength=5";
 const options = {
@@ -39,13 +39,7 @@ const setGlobalData = async () => {
 
 // setGlobalData()
 
-/*^^^^^^^^^^^^^^^^ end ^^^^^^^^^^^^^^^^^^^ generate random word */
-
-/*------start------------ random word and get definitions  */
-
-// let searchForm = document.querySelector("#search");
-// let searchWord = searchForm.querySelector("input");
-// let searchButton = searchForm.querySelector("button");
+/*------------------------------- random word and get definitions  */
 
 function getDefinition(e, searchWord) {
   e.preventDefault();
@@ -56,25 +50,20 @@ function getDefinition(e, searchWord) {
     })
     .then((json) => {
       let meanings = json[0].meanings;
-      console.log(`-----------------${json[0].word}----------------`);
       for (let defs of meanings) {
-        console.log(defs.partOfSpeech);
         for (let def of defs.definitions) {
-          console.log(def);
-
-          meaningDom.innerText = `Definition: "${def.definition}"
-          Example: "${def.example}"
+          meaningDom.innerText = `Definition: 
+          ${def.definition}
+          Example: 
+          "${def.example}"
           `;
         }
       }
-      console.log(`--------------------------------------`);
     })
     .catch((err) => {
       console.error(err);
     });
 }
-
-// searchForm.addEventListener("submit", search);
 
 generateBtn.addEventListener("click", (event) => {
   let todayWord = setGlobalData();
@@ -83,7 +72,7 @@ generateBtn.addEventListener("click", (event) => {
   });
 });
 
-/*^^^^^^^^^^^^^^^^ end ^^^^^^^^^^^^^^^^^^^ random word and get definitions */
+/*------------------------------- local storage and list of words  */
 
 const meaningDom = document.querySelector(".meaning");
 const myWordsDom = document.querySelector(".my-words");

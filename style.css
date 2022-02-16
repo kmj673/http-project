@@ -1,5 +1,5 @@
 .width-lg {
-  max-width: 20rem;
+  max-width: 40rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -13,6 +13,7 @@ body {
   background: #222;
   color: white;
   font-size: 2rem;
+  font-family: Josefin Sans;
 }
 header {
   position: absolute;
@@ -26,8 +27,8 @@ header {
 main {
   display: flex;
   flex-flow: column wrap;
-  border: 5px solid green;
-  gap: 0.5rem;
+  margin-top: 1rem;
+  width: 35rem;
 }
 h1 {
   font-family: Josefin Sans;
@@ -37,36 +38,55 @@ h1 {
   line-height: 2rem;
   color: #ffffff;
 }
-.generate-word {
+/* -------------------------------top section */
+.top-section {
   background-color: #25273d;
+  height: 3rem;
   display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
 }
-.generate-word > div {
+.top-section > div {
   font-family: Josefin Sans;
   font-style: normal;
   font-weight: normal;
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: #c8cbe7;
+  margin-left: 1rem;
 }
-.generate-word > span {
-  background: lightyellow;
-  /* font-size: 2rem;
+.top-section > div > span {
+  /* background: lightyellow;
+  font-size: 2rem;
   padding: 0.5rem 1rem;
   margin: 5px; */
-  color: black;
+  color: #c8cbe7;
   border-radius: 1rem;
 }
-.generate-word > button {
+.top-section > button {
+  font-size: 0.5rem;
+  font-weight: 600;
   border: none;
-  border-radius: 1rem;
-  /* padding: 2rem 3.5rem;
-  font-size: 2rem; */
-  background: lightgreen;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.5rem;
+  background: #c4c4c4;
   cursor: pointer;
+  margin-right: 1rem;
 }
-
+/* ------------------------------------meaning section */
+.meaning {
+  display: flex;
+  align-items: center;
+  padding: 2rem 1rem;
+  background-color: #c4c4c4;
+  height: 5rem;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+/* ------------------------------- word list section */
 .word-list {
-  border: 5px solid pink;
+  margin-top: 1rem;
+  background-color: #25273d;
 }
 .list-of-my-words {
   cursor: pointer;
@@ -85,8 +105,4 @@ h1 {
 
 #checkbox:checked ~ .az {
   color: lawngreen;
-}
-
-.meaning {
-  font-size: 1.5rem;
 }
