@@ -4,29 +4,31 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project Name</title>
+    <title>5 letter words</title>
 
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Project Name</h1>
-    <div>five letter word: <span></span></div>
-
-    <button>Generate a word from API</button>
-    <section></section>
-    <!-- <form action="" id="search">
-      <label for="search">Search</label>
-      <input type="text" name="search" />
-      <button type="submit">Search</button>
-    </form> -->
-
-    <section class="">
-      <h2>Word History</h2>
-      <p>click on a word to get defination</p>
-
-      <div class="my-words"></div>
-    </section>
-
+    <header></header>
+    <main class="width-lg">
+      <h1>5 letter words</h1>
+      <section class="generate-word">
+        <div>five letter word: <span></span></div>
+        <div class="definition"></div>
+        <button>Generate a word from API</button>
+      </section>
+      <section class="word-list">
+        <h2>Word History</h2>
+        <p>click on a word to get defination</p>
+        <div class="my-words"></div>
+      </section>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>

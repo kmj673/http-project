@@ -1,18 +1,54 @@
-h1 {
-  background-color: black;
-  color: #fff8e7;
+.width-lg {
+  max-width: 20rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 body {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
   display: grid;
   place-items: center;
-  height: 50vh;
+  /* height: 50vh; */
   background: #222;
   color: white;
   font-size: 2rem;
 }
-
-span {
+header {
+  position: absolute;
+  width: 100%;
+  height: 15rem;
+  left: 0px;
+  top: 0px;
+  background-image: linear-gradient(135deg, #3710bd, #a42395);
+  z-index: -10;
+}
+main {
+  display: flex;
+  flex-flow: column wrap;
+  border: 5px solid green;
+  gap: 0.5rem;
+}
+h1 {
+  font-family: Josefin Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 2rem;
+  color: #ffffff;
+}
+.generate-word {
+  background-color: #25273d;
+  display: flex;
+}
+.generate-word > div {
+  font-family: Josefin Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1rem;
+  color: #c8cbe7;
+}
+.generate-word > span {
   background: lightyellow;
   /* font-size: 2rem;
   padding: 0.5rem 1rem;
@@ -20,12 +56,15 @@ span {
   color: black;
   border-radius: 1rem;
 }
-
-button {
+.generate-word > button {
   border: none;
   border-radius: 1rem;
   /* padding: 2rem 3.5rem;
   font-size: 2rem; */
   background: lightgreen;
   cursor: pointer;
+}
+
+.word-list {
+  border: 5px solid pink;
 }
