@@ -29,3 +29,26 @@ button {
   background: lightgreen;
   cursor: pointer;
 }
+
+.list-of-my-words {
+  cursor: pointer;
+}
+
+.list-of-my-words:hover {
+  color: red;
+}
+.az {
+  cursor: pointer;
+  font-size: 1rem;
+}
+#checkbox {
+  display: none;
+}
+
+#checkbox:checked ~ .az {
+  color: lawngreen;
+}
+
+.meaning {
+  font-size: 1.5rem;
+}

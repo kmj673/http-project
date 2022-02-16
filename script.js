@@ -85,7 +85,7 @@ generateBtn.addEventListener("click", (event) => {
 
 /*^^^^^^^^^^^^^^^^ end ^^^^^^^^^^^^^^^^^^^ random word and get definitions */
 
-const meaningDom = document.querySelector("section");
+const meaningDom = document.querySelector(".meaning");
 const myWordsDom = document.querySelector(".my-words");
 
 function renderMyWords(array) {
@@ -115,3 +115,23 @@ if (localStorage.getItem("myWords")) {
   myWords = JSON.parse(localStorage.getItem("myWords"));
   renderMyWords(myWords);
 }
+
+// filter array in dom myWords
+
+function filterArrayInDom() {
+  let array = [...myWords];
+
+  let aZArray = array.sort();
+  console.log(aZArray);
+  renderMyWords(aZArray);
+}
+
+const checkboxAZ = document.querySelector("#checkbox");
+
+checkboxAZ.addEventListener("click", (e) => {
+  if (checkboxAZ.checked) {
+    filterArrayInDom();
+  } else {
+    renderMyWords(myWords);
+  }
+});
