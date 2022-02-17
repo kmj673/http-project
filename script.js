@@ -101,7 +101,13 @@ function updateLocalStorageForMyWords() {
 
 if (localStorage.getItem("myWords")) {
   myWords = JSON.parse(localStorage.getItem("myWords"));
-  renderMyWords(myWords);
+  let words = [];
+  myWords.forEach((word) => {
+    if (word !== null) {
+      words.push(word);
+    }
+  });
+  renderMyWords(words);
 }
 
 // filter array in dom myWords
