@@ -29,4 +29,5 @@ This repo is created for learning new word daily.
 - [figma](https://www.figma.com/file/YBoInrxjSSOOhEn4FgmWL3/todo-app?node-id=0%3A1)
 
 ## etc.
-- [hackmd](https://hackmd.io/@YPxrtui_T1ObmCpE6R0kUQ/ByqnR-dyc#/)
+- [first presentation](https://hackmd.io/@YPxrtui_T1ObmCpE6R0kUQ/ByqnR-dyc#/)
+- [last presentation](https://hackmd.io/@YPxrtui_T1ObmCpE6R0kUQ/ByBWz-nJc#/)
