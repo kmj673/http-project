@@ -79,10 +79,12 @@ const myWordsDom = document.querySelector(".my-words");
 function renderMyWords(array) {
   myWordsDom.innerHTML = "";
   array.forEach((element) => {
-    let div = document.createElement("div");
-    div.classList.add("list-of-my-words");
-    div.textContent = element;
-    myWordsDom.appendChild(div);
+    if (element !== null) {
+      let div = document.createElement("div");
+      div.classList.add("list-of-my-words");
+      div.textContent = element;
+      myWordsDom.appendChild(div);
+    }
   });
 }
 
@@ -101,23 +103,27 @@ function updateLocalStorageForMyWords() {
 
 if (localStorage.getItem("myWords")) {
   myWords = JSON.parse(localStorage.getItem("myWords"));
-  let words = [];
+  let wordsArr = [];
   myWords.forEach((word) => {
     if (word !== null) {
-      words.push(word);
+      wordsArr.push(word);
     }
   });
-  renderMyWords(words);
+  renderMyWords(wordsArr);
 }
 
 // filter array in dom myWords
 
 function filterArrayInDom() {
   let array = [...myWords];
-
   let aZArray = array.sort();
-  console.log(aZArray);
-  renderMyWords(aZArray);
+  let words = [];
+  aZArray.forEach((word) => {
+    if (word !== null) {
+      words.push(word);
+    }
+  });
+  renderMyWords(words);
 }
 
 const checkboxAZ = document.querySelector("#checkbox");
