@@ -46,6 +46,7 @@ h1 {
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
+  min-height: 4rem;
 }
 .top-section > div {
   font-family: Josefin Sans;
@@ -74,13 +75,13 @@ h1 {
   color: white;
   border: 1px solid white;
   cursor: pointer;
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
 /* ------------------------------------meaning section */
 .meaning {
   display: flex;
   align-items: center;
-  padding: 2rem 1rem;
+  padding: 2rem 2rem;
   background-color: #222;
   color: white;
   min-height: 5rem;
