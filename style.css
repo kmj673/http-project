@@ -84,6 +84,7 @@ h1 {
   background-color: #222;
   color: white;
   min-height: 5rem;
+  width: 35rem;
   font-size: 1.5rem;
   line-height: 1.5rem;
 }
@@ -105,14 +106,18 @@ h1 {
   font-size: 1rem;
   margin-top: 0px;
 }
-.word-list > .my-words > div {
+/* .word-list > .my-words > div {
   color: #c8cbe7;
   border-bottom: 1px solid #c8cbe7;
   padding: 0.5rem 2rem;
   font-size: 1.5rem;
-}
+} */
 .list-of-my-words {
   cursor: pointer;
+  color: #c8cbe7;
+  border-bottom: 1px solid #c8cbe7;
+  padding: 0.5rem 2rem;
+  font-size: 1.5rem;
 }
 
 .list-of-my-words:hover {

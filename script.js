@@ -1,11 +1,3 @@
-let url =
-  "https://api.sheety.co/eb3b79116190fe643bcc9a2df6efeea7/5LetterWords/sheet1";
-fetch(url)
-  .then((response) => response.json())
-  .then((json) => {
-    // Do something with the data
-    console.log(json.sheet1);
-  });
 /*------------------------------------ generate random word */
 const link =
   "https://random-words5.p.rapidapi.com/getMultipleRandom?count=10&wordLength=5";
