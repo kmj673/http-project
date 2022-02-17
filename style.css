@@ -28,7 +28,7 @@ main {
   display: flex;
   flex-flow: column wrap;
   margin-top: 1rem;
-  width: 35rem;
+  min-width: 35rem;
 }
 h1 {
   font-family: Josefin Sans;
@@ -46,14 +46,15 @@ h1 {
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
+  min-height: 4rem;
 }
 .top-section > div {
   font-family: Josefin Sans;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 500;
   font-size: 1.5rem;
   color: #c8cbe7;
-  margin-left: 1rem;
+  margin-left: 2rem;
 }
 .top-section > div > span {
   /* background: lightyellow;
@@ -65,24 +66,26 @@ h1 {
 }
 .top-section > button {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 500;
   border: none;
   border-radius: 0.5rem;
-  padding: 0.5rem 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   background: #fc0d1b;
   color: white;
   border: 1px solid white;
   cursor: pointer;
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
 /* ------------------------------------meaning section */
 .meaning {
   display: flex;
   align-items: center;
-  padding: 2rem 1rem;
+  padding: 1rem 2rem;
   background-color: #222;
   color: white;
-  height: 5rem;
+  min-height: 5rem;
+  width: 35rem;
   font-size: 1.5rem;
   line-height: 1.5rem;
 }
@@ -90,22 +93,59 @@ h1 {
 .word-list {
   margin-top: 1rem;
   background-color: #25273d;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
 }
+.word-list > h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+.word-list > p {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 0px;
+}
+/* .word-list > .my-words > div {
+  color: #c8cbe7;
+  border-bottom: 1px solid #c8cbe7;
+  padding: 0.5rem 2rem;
+  font-size: 1.5rem;
+} */
 .list-of-my-words {
   cursor: pointer;
+  color: #c8cbe7;
+  border-bottom: 1px solid #c8cbe7;
+  padding: 0.5rem 2rem;
+  font-size: 1.5rem;
 }
 
 .list-of-my-words:hover {
   color: red;
 }
 .az {
+  max-width: 10rem;
+  text-align: center;
+  padding: 0.5rem;
   cursor: pointer;
   font-size: 1rem;
+  background-color: red;
+  color: white;
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
 }
+
 #checkbox {
   display: none;
 }
-
 #checkbox:checked ~ .az {
   color: lawngreen;
+}
+.my-words {
+  margin-top: 1rem;
+  width: 100%;
+  text-align: left;
+  background-color: #494c6b;
 }

@@ -5,7 +5,7 @@ const options = {
   method: "GET",
   headers: {
     "x-rapidapi-host": "random-words5.p.rapidapi.com",
-    "x-rapidapi-key": "11c9d0aad2msh5e9b84b925c48abp13a7d3jsn79a559ddbd6f",
+    "x-rapidapi-key": "6c6b5fcbd5msh0ba1b787cc9aea9p10eaf9jsn992d771592a7",
   },
 };
 
@@ -101,7 +101,13 @@ function updateLocalStorageForMyWords() {
 
 if (localStorage.getItem("myWords")) {
   myWords = JSON.parse(localStorage.getItem("myWords"));
-  renderMyWords(myWords);
+  let words = [];
+  myWords.forEach((word) => {
+    if (word !== null) {
+      words.push(word);
+    }
+  });
+  renderMyWords(words);
 }
 
 // filter array in dom myWords
