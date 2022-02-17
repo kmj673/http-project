@@ -25,7 +25,7 @@ This repo is created for learning new word daily.
 - [dictionary](https://rapidapi.com/twinword/api/word-dictionary/?utm_source=ANIA-KUBOW&utm_medium=DevRel&utm_campaign=DevRel)
 - [Free Dictionary API](https://dictionaryapi.dev/)
 
-## Designs //delete it later
+## Designs
 - [figma](https://www.figma.com/file/YBoInrxjSSOOhEn4FgmWL3/todo-app?node-id=0%3A1)
 
 ## etc.
